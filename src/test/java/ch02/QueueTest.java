@@ -20,6 +20,7 @@ class QueueTest {
     }
 
     @DisplayName("큐에 값을 삽입한다")
+    @Test
     void enqueue() {
         //given
         Queue queue = Queue.create(3);
@@ -29,6 +30,6 @@ class QueueTest {
         queue.enqueue(item);
 
         //then
-        Assertions.assertEquals(1, queue.size);
+        Assertions.assertEquals(1, queue.size());
     }
 }
