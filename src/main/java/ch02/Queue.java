@@ -20,15 +20,15 @@ public class Queue {
         return capacity;
     }
 
+    public int size() {
+        return store.size();
+    }
+
     public void enqueue(int item) {
         if (store.size() == capacity) {
             throw new IllegalStateException("Queue is full");
         }
         store.add(item);
-    }
-
-    public int size() {
-        return store.size();
     }
 
     public int dequeue() {

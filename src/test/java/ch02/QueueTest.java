@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class QueueTest {
 
     @DisplayName("특정 용량의 큐를 생성한다")
@@ -16,7 +18,7 @@ class QueueTest {
         Queue queue = Queue.create(size);
 
         //then
-        Assertions.assertEquals(queue.getCapacity(), size);
+        assertEquals(queue.getCapacity(), size);
     }
 
     @DisplayName("큐에 값을 삽입한다")
@@ -30,7 +32,7 @@ class QueueTest {
         queue.enqueue(item);
 
         //then
-        Assertions.assertEquals(1, queue.size());
+        assertEquals(1, queue.size());
     }
 
     @DisplayName("큐의 용량이 다 되었으면 삽입에 실패한다.")
@@ -45,7 +47,7 @@ class QueueTest {
 
         //then
         Assertions.assertThrows(IllegalStateException.class, () -> queue.enqueue(20));
-        Assertions.assertEquals(1, queue.size());
+        assertEquals(1, queue.size());
     }
 
     @DisplayName("큐에서 첫 번째 값을 꺼낸다")
@@ -61,7 +63,7 @@ class QueueTest {
         int result = queue.dequeue();
 
         //then
-        Assertions.assertEquals(firstItem, result);
+        assertEquals(firstItem, result);
     }
 
     @DisplayName("큐가 비어있으면 꺼낼 수 없다")
@@ -71,6 +73,6 @@ class QueueTest {
         Queue queue = Queue.create(3);
 
         //then
-        Assertions.assertThrows(IllegalStateException.class, () -> queue.dequeue());
+        Assertions.assertThrows(IllegalStateException.class, queue::dequeue);
     }
 }
