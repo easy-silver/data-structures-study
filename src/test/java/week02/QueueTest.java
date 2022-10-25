@@ -1,4 +1,4 @@
-package ch02;
+package week02;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
