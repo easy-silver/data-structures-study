@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class QueueTest {
 
@@ -68,11 +69,21 @@ class QueueTest {
 
     @DisplayName("큐가 비어있으면 꺼낼 수 없다")
     @Test
-    void empty() {
+    void dequeWhenEmpty() {
         //given
         Queue queue = Queue.create(3);
 
         //then
         Assertions.assertThrows(IllegalStateException.class, queue::dequeue);
+    }
+
+    @DisplayName("큐가 비어있는지 확인한다")
+    @Test
+    void isEmpty() {
+        //given
+        Queue queue = Queue.create(3);
+
+        //then
+        assertTrue(queue.isEmpty());
     }
 }
