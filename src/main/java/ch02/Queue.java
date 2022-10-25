@@ -1,11 +1,12 @@
 package ch02;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Queue {
 
     private final int capacity;
-    private List<Integer> store;
+    private final List<Integer> store = new ArrayList();
 
     public Queue(int capacity) {
         this.capacity = capacity;
@@ -24,6 +25,6 @@ public class Queue {
     }
 
     public int size() {
-        return 0;
+        return store.size();
     }
 }
