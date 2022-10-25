@@ -63,4 +63,14 @@ class QueueTest {
         //then
         Assertions.assertEquals(firstItem, result);
     }
+
+    @DisplayName("큐가 비어있으면 꺼낼 수 없다")
+    @Test
+    void empty() {
+        //given
+        Queue queue = Queue.create(3);
+
+        //then
+        Assertions.assertThrows(IllegalStateException.class, () -> queue.dequeue());
+    }
 }
