@@ -32,6 +32,9 @@ public class Queue {
     }
 
     public int dequeue() {
+        if (store.isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
         return store.remove(0);
     }
 }
