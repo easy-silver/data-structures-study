@@ -8,7 +8,7 @@ public class Queue {
     private final int capacity;
     private final List<Integer> store = new ArrayList<>();
 
-    public Queue(int capacity) {
+    private Queue(int capacity) {
         this.capacity = capacity;
     }
 
