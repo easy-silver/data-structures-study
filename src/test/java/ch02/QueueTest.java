@@ -32,4 +32,19 @@ class QueueTest {
         //then
         Assertions.assertEquals(1, queue.size());
     }
+
+    @DisplayName("큐의 용량이 다 되었으면 삽입에 실패한다.")
+    @Test
+    void full() {
+        //given
+        int capacity = 1;
+        Queue queue = Queue.create(capacity);
+
+        //when
+        queue.enqueue(10);
+
+        //then
+        Assertions.assertThrows(IllegalStateException.class, () -> queue.enqueue(20));
+        Assertions.assertEquals(1, queue.size());
+    }
 }
