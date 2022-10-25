@@ -6,7 +6,7 @@ import java.util.List;
 public class Queue {
 
     private final int capacity;
-    private final List<Integer> store = new ArrayList();
+    private final List<Integer> store = new ArrayList<>();
 
     public Queue(int capacity) {
         this.capacity = capacity;
