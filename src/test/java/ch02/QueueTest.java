@@ -15,7 +15,7 @@ class QueueTest {
         int size = 3;
 
         //when
-        Queue queue = Queue.create(size);
+        Queue queue = Queue.createWithCapacityOf(size);
 
         //then
         assertEquals(queue.getCapacity(), size);
@@ -25,7 +25,7 @@ class QueueTest {
     @Test
     void enqueue() {
         //given
-        Queue queue = Queue.create(3);
+        Queue queue = Queue.createWithCapacityOf(3);
         int item = 10;
 
         //when
@@ -40,7 +40,7 @@ class QueueTest {
     void enqueueWhenFull() {
         //given
         int capacity = 1;
-        Queue queue = Queue.create(capacity);
+        Queue queue = Queue.createWithCapacityOf(capacity);
 
         //when
         queue.enqueue(10);
@@ -54,7 +54,7 @@ class QueueTest {
     @Test
     void dequeue() {
         //given
-        Queue queue = Queue.create(3);
+        Queue queue = Queue.createWithCapacityOf(3);
         int firstItem = 10;
         int secondItem = 20;
         queue.enqueue(firstItem);
@@ -70,7 +70,7 @@ class QueueTest {
     @Test
     void dequeWhenEmpty() {
         //given
-        Queue queue = Queue.create(3);
+        Queue queue = Queue.createWithCapacityOf(3);
 
         //then
         Assertions.assertThrows(IllegalStateException.class, queue::dequeue);
@@ -80,8 +80,8 @@ class QueueTest {
     @Test
     void isEmpty() {
         //given
-        Queue queue1 = Queue.create(3);
-        Queue queue2 = Queue.create(3);
+        Queue queue1 = Queue.createWithCapacityOf(3);
+        Queue queue2 = Queue.createWithCapacityOf(3);
         queue2.enqueue(10);
 
         //then
@@ -93,12 +93,12 @@ class QueueTest {
     @Test
     void isFull() {
         //given
-        Queue queue1 = Queue.create(3);
+        Queue queue1 = Queue.createWithCapacityOf(3);
         queue1.enqueue(10);
         queue1.enqueue(20);
         queue1.enqueue(30);
 
-        Queue queue2 = Queue.create(3);
+        Queue queue2 = Queue.createWithCapacityOf(3);
         queue2.enqueue(100);
 
         //then

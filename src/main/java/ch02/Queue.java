@@ -12,7 +12,7 @@ public class Queue {
         this.capacity = capacity;
     }
 
-    public static Queue create(int capacity) {
+    public static Queue createWithCapacityOf(int capacity) {
         return new Queue(capacity);
     }
 
