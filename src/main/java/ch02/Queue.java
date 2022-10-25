@@ -32,6 +32,6 @@ public class Queue {
     }
 
     public int dequeue() {
-        return 0;
+        return store.remove(0);
     }
 }
