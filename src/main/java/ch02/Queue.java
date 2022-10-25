@@ -21,6 +21,9 @@ public class Queue {
     }
 
     public void enqueue(int item) {
+        if (store.size() == capacity) {
+            throw new IllegalStateException("Queue is full");
+        }
         store.add(item);
     }
 
