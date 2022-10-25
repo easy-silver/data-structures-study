@@ -47,4 +47,20 @@ class QueueTest {
         Assertions.assertThrows(IllegalStateException.class, () -> queue.enqueue(20));
         Assertions.assertEquals(1, queue.size());
     }
+
+    @DisplayName("큐에서 첫 번째 값을 꺼낸다")
+    @Test
+    void dequeue() {
+        //given
+        Queue queue = Queue.create(3);
+        int firstItem = 10;
+        queue.enqueue(firstItem);
+        queue.enqueue(20);
+
+        //when
+        int result = queue.dequeue();
+
+        //then
+        Assertions.assertEquals(firstItem, result);
+    }
 }

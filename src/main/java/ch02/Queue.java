@@ -30,4 +30,8 @@ public class Queue {
     public int size() {
         return store.size();
     }
+
+    public int dequeue() {
+        return 0;
+    }
 }
