@@ -41,4 +41,8 @@ public class Queue {
         }
         return store.remove(0);
     }
+
+    public boolean isFull() {
+        return false;
+    }
 }

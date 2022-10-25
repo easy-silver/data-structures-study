@@ -86,4 +86,17 @@ class QueueTest {
         //then
         assertTrue(queue.isEmpty());
     }
+
+    @DisplayName("큐가 꽉 차있는지 확인한다")
+    @Test
+    void isFull() {
+        //given
+        Queue queue = Queue.create(3);
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+
+        //then
+        assertTrue(queue.isFull());
+    }
 }
