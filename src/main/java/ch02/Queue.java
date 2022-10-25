@@ -24,6 +24,10 @@ public class Queue {
         return store.size();
     }
 
+    public boolean isEmpty() {
+        return store.isEmpty();
+    }
+
     public void enqueue(int item) {
         if (store.size() == capacity) {
             throw new IllegalStateException("Queue is full");
