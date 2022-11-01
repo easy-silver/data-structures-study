@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ParenthesisStringTest {
 
     @Test
-    public void test1() {
-        assertEquals("NO", solution("(())())"));
-        assertEquals("NO", solution("(((()())()"));
-        assertEquals("YES", solution("(()())((()))"));
-        assertEquals("NO", solution("((()()(()))(((())))()"));
-        assertEquals("YES", solution("()()()()(()()())()"));
-        assertEquals("NO", solution("(()((())()("));
+    public void test() {
+        assertThat(solution("(())())")).isEqualTo("NO");
+        assertThat(solution("(((()())()")).isEqualTo("NO");
+        assertThat(solution("(()())((()))")).isEqualTo("YES");
+        assertThat(solution("((()()(()))(((())))()")).isEqualTo("NO");
+        assertThat(solution("()()()()(()()())()")).isEqualTo("YES");
+        assertThat(solution("(()((())()(")).isEqualTo("NO");
     }
 
     private String solution(String input) {
