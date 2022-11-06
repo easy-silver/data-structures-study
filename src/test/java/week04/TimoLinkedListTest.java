@@ -27,6 +27,20 @@ class TimoLinkedListTest {
         assertThat(linkedListAppend.size()).isEqualTo(2);
     }
 
+    @DisplayName("제일 뒤에 요소 삽입")
+    @Test
+    void pushBack() {
+        //given
+        TimoLinkedList linkedListEmpty = new TimoLinkedList();
+        Node node = new Node(1);
+
+        //when
+        linkedListEmpty.pushBack(node);
+
+        //then
+        assertThat(linkedListEmpty.size()).isEqualTo(1);
+    }
+
     @DisplayName("제일 첫 요소 제거")
     @Test
     void popFirst() {

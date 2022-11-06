@@ -52,4 +52,8 @@ public class TimoLinkedList {
     private void decreaseSize() {
         this.size--;
     }
+
+    public void pushBack(Node node) {
+
+    }
 }
