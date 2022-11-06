@@ -21,4 +21,8 @@ public class Node {
     public boolean hasNextNode() {
         return next != null;
     }
+
+    public int getKey() {
+        return this.key;
+    }
 }

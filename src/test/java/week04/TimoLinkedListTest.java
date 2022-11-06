@@ -102,4 +102,20 @@ class TimoLinkedListTest {
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("비어있는 리스트입니다.");
     }
+
+    @DisplayName("해당 KEY를 가진 노드 탐색")
+    @Test
+    void search() {
+        //given
+        TimoLinkedList linkedList = new TimoLinkedList();
+        linkedList.pushBack(new Node(1));
+        linkedList.pushBack(new Node(2));
+        linkedList.pushBack(new Node(3));
+
+        //when
+        Node findNode =  linkedList.search(2);
+
+        //then
+        assertThat(findNode.getKey()).isEqualTo(2);
+    }
 }

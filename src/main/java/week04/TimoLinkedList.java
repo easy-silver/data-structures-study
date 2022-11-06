@@ -89,4 +89,8 @@ public class TimoLinkedList {
         decreaseSize();
         return targetNode;
     }
+
+    public Node search(int key) {
+        return null;
+    }
 }
