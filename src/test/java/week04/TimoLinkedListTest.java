@@ -25,4 +25,24 @@ class TimoLinkedListTest {
         assertThat(linkedListEmpty.size()).isEqualTo(1);
         assertThat(linkedListAppend.size()).isEqualTo(2);
     }
+
+    @DisplayName("제일 첫 요소 제거")
+    @Test
+    void popFirst() {
+        //given
+        TimoLinkedList linkedList = new TimoLinkedList();
+        Node firstNode = new Node(1);
+        Node secondNode = new Node(2);
+        Node thirdNode = new Node(3);
+
+        linkedList.pushFirst(thirdNode);
+        linkedList.pushFirst(secondNode);
+        linkedList.pushFirst(firstNode);
+
+        //when
+        Node popNode = linkedList.popFirst();
+
+        //then
+        assertThat(popNode).isEqualTo(firstNode);
+    }
 }

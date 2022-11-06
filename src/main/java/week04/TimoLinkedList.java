@@ -30,4 +30,8 @@ public class TimoLinkedList {
     public int size() {
         return this.size;
     }
+
+    public Node popFirst() {
+        return null;
+    }
 }
