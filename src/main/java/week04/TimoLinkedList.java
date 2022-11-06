@@ -54,6 +54,21 @@ public class TimoLinkedList {
     }
 
     public void pushBack(Node node) {
+        if (isEmpty()) {
+            changeHead(node);
+        } else {
 
+            if (!head.hasNextNode()) {
+                head.changeNext(node);
+            } else {
+                Node nextNode = head.getNextNode();
+                while (nextNode.hasNextNode()) {
+                    nextNode = nextNode.getNextNode();
+                }
+                nextNode.changeNext(node);
+            }
+        }
+
+        increaseSize();
     }
 }
