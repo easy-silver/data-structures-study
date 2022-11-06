@@ -32,13 +32,19 @@ class TimoLinkedListTest {
     void pushBack() {
         //given
         TimoLinkedList linkedListEmpty = new TimoLinkedList();
-        Node node = new Node(1);
+        Node firstNode = new Node(1);
+
+        TimoLinkedList linkedListAppend = new TimoLinkedList();
+        Node secondNode = new Node(2);
 
         //when
-        linkedListEmpty.pushBack(node);
+        linkedListEmpty.pushBack(firstNode);
+        linkedListAppend.pushBack(firstNode);
+        linkedListAppend.pushBack(secondNode);
 
         //then
         assertThat(linkedListEmpty.size()).isEqualTo(1);
+        assertThat(linkedListAppend.size()).isEqualTo(2);
     }
 
     @DisplayName("제일 첫 요소 제거")
