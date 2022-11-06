@@ -11,13 +11,18 @@ class TimoLinkedListTest {
     @Test
     void pushFirst() {
         //given
-        TimoLinkedList linkedList = new TimoLinkedList();
-        Node newNode = new Node(1);
+        TimoLinkedList linkedListEmpty = new TimoLinkedList();
+        TimoLinkedList linkedListAppend = new TimoLinkedList();
+        Node fistNode = new Node(1);
+        Node secondNode = new Node(1);
 
         //when
-        linkedList.pushFirst(newNode);
+        linkedListEmpty.pushFirst(fistNode);
+        linkedListAppend.pushFirst(fistNode);
+        linkedListAppend.pushFirst(secondNode);
 
         //then
-        assertThat(linkedList.size()).isEqualTo(1);
+        assertThat(linkedListEmpty.size()).isEqualTo(1);
+        assertThat(linkedListAppend.size()).isEqualTo(2);
     }
 }
