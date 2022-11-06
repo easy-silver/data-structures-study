@@ -32,6 +32,24 @@ public class TimoLinkedList {
     }
 
     public Node popFirst() {
-        return null;
+        if (isEmpty()) {
+            throw new IllegalStateException("비어있는 리스트입니다.");
+        }
+
+        Node target = head;
+
+        if (head.hasNextNode()) {
+            Node nextNode = head.getNextNode();
+            changeHead(nextNode);
+        } else {
+            changeHead(null);
+        }
+
+        decreaseSize();
+        return target;
+    }
+
+    private void decreaseSize() {
+        this.size--;
     }
 }

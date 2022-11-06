@@ -13,4 +13,12 @@ public class Node {
     public void changeNext(Node node) {
         this.next = node;
     }
+
+    public Node getNextNode() {
+        return next;
+    }
+
+    public boolean hasNextNode() {
+        return next != null;
+    }
 }
