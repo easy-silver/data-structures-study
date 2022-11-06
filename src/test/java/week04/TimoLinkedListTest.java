@@ -98,5 +98,8 @@ class TimoLinkedListTest {
         assertThatThrownBy(linkedList::popFront)
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("비어있는 리스트입니다.");
+        assertThatThrownBy(linkedList::popBack)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("비어있는 리스트입니다.");
     }
 }
