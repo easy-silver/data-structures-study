@@ -67,6 +67,27 @@ class TimoLinkedListTest {
         assertThat(popNode).isEqualTo(firstNode);
     }
 
+    @DisplayName("제일 마지막 요소 제거")
+    @Test
+    void popLast() {
+        //given
+        TimoLinkedList linkedList = new TimoLinkedList();
+        Node firstNode = new Node(1);
+        Node secondNode = new Node(2);
+        Node thirdNode = new Node(3);
+
+        linkedList.pushBack(firstNode);
+        linkedList.pushBack(secondNode);
+        linkedList.pushBack(thirdNode);
+
+        //when
+        Node popNode = linkedList.popBack();
+
+        //then
+        assertThat(popNode).isEqualTo(thirdNode);
+        assertThat(linkedList.size()).isEqualTo(2);
+    }
+
     @DisplayName("비어있는 리스트에서 popFirst()를 호출하면 예외 발생")
     @Test
     void popFirstException() {
