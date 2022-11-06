@@ -5,7 +5,7 @@ public class TimoLinkedList {
     private Node head;
     private int size;
 
-    public void pushFirst(Node node) {
+    public void pushFront(Node node) {
         if (isEmpty()) {
             changeHead(node);
         } else {
@@ -31,7 +31,7 @@ public class TimoLinkedList {
         return this.size;
     }
 
-    public Node popFirst() {
+    public Node popFront() {
         if (isEmpty()) {
             throw new IllegalStateException("비어있는 리스트입니다.");
         }

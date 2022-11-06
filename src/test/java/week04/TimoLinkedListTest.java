@@ -10,7 +10,7 @@ class TimoLinkedListTest {
 
     @DisplayName("제일 앞에 요소 삽입")
     @Test
-    void pushFirst() {
+    void pushFront() {
         //given
         TimoLinkedList linkedListEmpty = new TimoLinkedList();
         TimoLinkedList linkedListAppend = new TimoLinkedList();
@@ -18,9 +18,9 @@ class TimoLinkedListTest {
         Node secondNode = new Node(1);
 
         //when
-        linkedListEmpty.pushFirst(fistNode);
-        linkedListAppend.pushFirst(fistNode);
-        linkedListAppend.pushFirst(secondNode);
+        linkedListEmpty.pushFront(fistNode);
+        linkedListAppend.pushFront(fistNode);
+        linkedListAppend.pushFront(secondNode);
 
         //then
         assertThat(linkedListEmpty.size()).isEqualTo(1);
@@ -36,12 +36,12 @@ class TimoLinkedListTest {
         Node secondNode = new Node(2);
         Node thirdNode = new Node(3);
 
-        linkedList.pushFirst(thirdNode);
-        linkedList.pushFirst(secondNode);
-        linkedList.pushFirst(firstNode);
+        linkedList.pushFront(thirdNode);
+        linkedList.pushFront(secondNode);
+        linkedList.pushFront(firstNode);
 
         //when
-        Node popNode = linkedList.popFirst();
+        Node popNode = linkedList.popFront();
 
         //then
         assertThat(popNode).isEqualTo(firstNode);
@@ -54,7 +54,7 @@ class TimoLinkedListTest {
         TimoLinkedList linkedList = new TimoLinkedList();
 
         //when & then
-        assertThatThrownBy(linkedList::popFirst)
+        assertThatThrownBy(linkedList::popFront)
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("비어있는 리스트입니다.");
     }
