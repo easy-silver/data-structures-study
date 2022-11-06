@@ -91,6 +91,17 @@ public class TimoLinkedList {
     }
 
     public Node search(int key) {
+        if (head.getKey() == key) {
+            return head;
+        } else {
+            Node target = head;
+            while (target.hasNextNode()) {
+                if (target.getKey() == key) {
+                    return target;
+                }
+                target = target.getNextNode();
+            }
+        }
         return null;
     }
 }

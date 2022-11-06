@@ -117,5 +117,6 @@ class TimoLinkedListTest {
 
         //then
         assertThat(findNode.getKey()).isEqualTo(2);
+        assertThat(linkedList.search(9)).isNull();
     }
 }
