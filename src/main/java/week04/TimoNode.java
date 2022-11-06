@@ -1,20 +1,20 @@
 package week04;
 
-public class Node {
+public class TimoNode {
 
     private final int key;
 
-    private Node next;
+    private TimoNode next;
 
-    public Node(int key) {
+    public TimoNode(int key) {
         this.key = key;
     }
 
-    public void changeNext(Node node) {
+    public void changeNext(TimoNode node) {
         this.next = node;
     }
 
-    public Node getNextNode() {
+    public TimoNode getNextNode() {
         return next;
     }
 

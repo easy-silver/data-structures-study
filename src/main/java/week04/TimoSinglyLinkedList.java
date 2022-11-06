@@ -1,11 +1,11 @@
 package week04;
 
-public class TimoLinkedList {
+public class TimoSinglyLinkedList {
 
-    private Node head;
+    private TimoNode head;
     private int size;
 
-    public void pushFront(Node node) {
+    public void pushFront(TimoNode node) {
         if (this.isNotEmpty()) {
             node.changeNext(head);
         }
@@ -13,12 +13,12 @@ public class TimoLinkedList {
         increaseSize();
     }
 
-    public void pushBack(Node node) {
+    public void pushBack(TimoNode node) {
         if (this.isEmpty()) {
             changeHead(node);
 
         } else {
-            Node target = head;
+            TimoNode target = head;
             while (target.hasNextNode()) {
                 target = target.getNextNode();
             }
@@ -27,10 +27,10 @@ public class TimoLinkedList {
         increaseSize();
     }
 
-    public Node popFront() {
+    public TimoNode popFront() {
         if (isEmpty()) throw new IllegalStateException("비어있는 리스트입니다.");
 
-        Node target = head;
+        TimoNode target = head;
 
         if (head.hasNextNode()) changeHead(head.getNextNode());
         else changeHead(null);
@@ -39,11 +39,11 @@ public class TimoLinkedList {
         return target;
     }
 
-    public Node popBack() {
+    public TimoNode popBack() {
         if (isEmpty()) throw new IllegalStateException("비어있는 리스트입니다.");
 
-        Node prevNode = null;
-        Node targetNode = head;
+        TimoNode prevNode = null;
+        TimoNode targetNode = head;
 
         while (targetNode.hasNextNode()) {
             prevNode = targetNode;
@@ -56,11 +56,11 @@ public class TimoLinkedList {
         return targetNode;
     }
 
-    public Node search(int key) {
+    public TimoNode search(int key) {
         if (head.getKey() == key) {
             return head;
         } else {
-            Node target = head;
+            TimoNode target = head;
             while (target.hasNextNode()) {
                 if (target.getKey() == key) {
                     return target;
@@ -91,7 +91,7 @@ public class TimoLinkedList {
         this.size--;
     }
 
-    private void changeHead(Node node) {
+    private void changeHead(TimoNode node) {
         this.head = node;
     }
 }
