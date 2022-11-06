@@ -6,14 +6,17 @@ public class TimoLinkedList {
     private int size;
 
     public void pushFirst(Node node) {
-        //FIXME. isEmpty()로 변경하기
-        if (head == null) {
+        if (isEmpty()) {
             changeHead(node);
         } else {
             node.changeNext(head);
             changeHead(node);
         }
         increaseSize();
+    }
+
+    private boolean isEmpty() {
+        return head == null;
     }
 
     private void increaseSize() {

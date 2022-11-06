@@ -1,8 +1,9 @@
 package week04;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class TimoLinkedListTest {
 
@@ -17,6 +18,6 @@ class TimoLinkedListTest {
         linkedList.pushFirst(newNode);
 
         //then
-        Assertions.assertThat(linkedList.size()).isEqualTo(1);
+        assertThat(linkedList.size()).isEqualTo(1);
     }
 }
