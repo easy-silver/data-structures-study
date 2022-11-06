@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class TimoLinkedListTest {
 
@@ -44,5 +45,17 @@ class TimoLinkedListTest {
 
         //then
         assertThat(popNode).isEqualTo(firstNode);
+    }
+
+    @DisplayName("비어있는 리스트에서 popFirst()를 호출하면 예외 발생")
+    @Test
+    void popFirstException() {
+        //given
+        TimoLinkedList linkedList = new TimoLinkedList();
+
+        //when & then
+        assertThatThrownBy(linkedList::popFirst)
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("비어있는 리스트입니다.");
     }
 }
